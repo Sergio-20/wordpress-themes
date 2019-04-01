@@ -1,8 +1,15 @@
 <?php get_header(); ?>
+
+<style>
+  .showcase {
+    background: url(<?php echo get_theme_mod('showcase_image', get_bloginfo('template_url').'/img/showcase.jpg'); ?>) no-repeat center center;
+  }
+</style>
+
 <section class="showcase">
-    <h1>Custom Bootstrap WordPress Theme</h1>
-    <p>Simple, yet elegant.</p>
-    <a class="btn btn-primary btn-lg text-light">Read More</a>
+    <h1><?php echo get_theme_mod('showcase_heading', 'Custom WordPress Bootstrap Theme'); ?></h1>
+    <p><h1><?php echo get_theme_mod('showcase_text', 'Simple, yet elegant.'); ?></h1></p>
+    <a href="<?php echo get_theme_mod('btn-url', 'https://www.google.com'); ?>" class="btn btn-primary btn-lg text-light"><?php echo get_theme_mod('btn-text', 'Read More'); ?></a>
 </section>
 
 <section class="boxes">
