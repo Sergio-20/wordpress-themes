@@ -36,6 +36,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
+    <!--Font Awesome-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <?php wp_head(); ?>
 
@@ -60,15 +62,26 @@
   </header>
 
   <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <?php
-        wp_nav_menu( array(
-          'theme_location'    => 'primary',
-          'container'         => 'div',
-          'menu_class'        => 'nav navbar-nav',
-          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-          'walker'            => new WP_Bootstrap_Navwalker(),
-        ) );
-      ?>
+    <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+      <div class="container">
+    	<!-- Brand and toggle get grouped for better mobile display -->
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<a class="navbar-brand" href="#"></a>
+    		<?php
+    		wp_nav_menu( array(
+    			'theme_location'    => 'primary',
+    			'depth'             => 2,
+    			'container'         => 'div',
+    			'container_class'   => 'collapse navbar-collapse',
+    			'container_id'      => 'bs-example-navbar-collapse-1',
+    			'menu_class'        => 'nav navbar-nav',
+    			'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+    			'walker'            => new WP_Bootstrap_Navwalker(),
+    		) );
+    		?>
+    	</div>
     </nav>
   </div>
+  <hr>

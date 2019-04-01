@@ -1,8 +1,10 @@
-<aside class="col-md-4 blog-sidebar">
-  <?php if(is_active_sidebar('sidebar')) : ?>
-    <?php dynamic_sidebar('sidebar'); ?>
-  <?php endif; ?>
-</aside><!-- /.blog-sidebar -->
+<?php if( !is_front_page() ) : ?>
+  <aside class="col-md-4 blog-sidebar">
+    <?php if(is_active_sidebar('sidebar')) : ?>
+      <?php dynamic_sidebar('sidebar'); ?>
+    <?php endif; ?>
+  </aside><!-- /.blog-sidebar -->
+<?php endif; ?>
 
 <footer class="blog-footer">
   <p>&copy;<?php echo Date('Y'); ?> - <?php bloginfo('name') ?></p>
